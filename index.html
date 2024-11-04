@@ -14,15 +14,27 @@
         ];
 
         var audio;
+        let initialized = false;
 
         window.onload = function() {
             audio = new Audio("resources/sfx/initialized.mp3");
-            audio.play();
+            audio.muted = true;
+
+
+            document.querySelector('.body').addEventListener("click", function() {
+                if (initialized != true) {
+                    audio.muted = false;
+                    audio.play();
+                    initialized = true;
+                }
+            });
 
             const imageElement = document.querySelector('.negroid-image img');
 
             imageElement.addEventListener('click', function() {
-                playRandomAudio();
+                if (initialized != false) {
+                    playRandomAudio();
+                }
             });
         }
 
@@ -35,14 +47,14 @@
         }
     </script>
 </head>
-<body>
+<body class="body">
     <div class="negroid">
         <div class="negroid-title">
             <h1>Ask George Droyd anything | <span style="color: #ffff00;">Niggersoft</span></h1>
         </div>
 
         <div class="negroid-image">
-            <img src="resources/images/droyd.png" alt="Ask Droyd" width="200" height="300" title="Click me, nigger!" />
+            <img src="resources/images/droyd.png" alt="Ask Droyd" width="200" height="300" title="Click me, nigger! I CANNNTTTTT BREATHEEEEE" />
         </div>
     </div>
 </body>
