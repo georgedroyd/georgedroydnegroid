@@ -1,0 +1,31 @@
+body {
+    background-image: url("../images/bg.gif");
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #fff;
+}
+
+.negroid {
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.negroid-title {
+    padding-bottom: 1em;
+}
+
+.negroid-image {
+    cursor: pointer;
+    position: relative;
+    display: inline-block;
+}
+
+.negroid-image img {
+    display: block;
+}
+
+.negroid-image:hover {
+    box-shadow: 5px 10px 8px 10px #888888;
+    transition: box-shadow 0.3s ease;
+}

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>George Droyd Negroid Popylon Technology</title>
+    <link rel="stylesheet" href="resources/styles/main.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+    <script>
+        const audioFiles = [
+            "resources/sfx/yes.wav",
+            "resources/sfx/no.wav",
+        ];
+
+        var audio;
+
+        window.onload = function() {
+            audio = new Audio("resources/sfx/initialized.mp3");
+            audio.play();
+
+            const imageElement = document.querySelector('.negroid-image img');
+
+            imageElement.addEventListener('click', function() {
+                playRandomAudio();
+            });
+        }
+
+        function playRandomAudio() {
+            const randomIndex = Math.floor(Math.random() * audioFiles.length);
+            const selectedAudio = audioFiles[randomIndex];
+
+            const audio = new Audio(selectedAudio);
+            audio.play();
+        }
+    </script>
+</head>
+<body>
+    <div class="negroid">
+        <div class="negroid-title">
+            <h1>Ask George Droyd anything | <span style="color: #ffff00;">Niggersoft</span></h1>
+        </div>
+
+        <div class="negroid-image">
+            <img src="resources/images/droyd.png" alt="Ask Droyd" width="200" height="300" title="Click me, nigger!" onclick="playRandomAudio();" />
+        </div>
+    </div>
+</body>
+</html>
